@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
 
-public class CameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour 
+{
     // Reference to the aircraft we're going to be following.
     public GameObject objectToFollow;
 
     // Position of the camera relative to the aircraft.
     // Here we have the camera behind and slightly above the aircraft.
-    public Vector3 positionRelativeToObject = new Vector3(0, 50, -300);
+    public Vector3 positionRelativeToObject = new Vector3(0, 50, -60);
 
     // How aggressively the camera follows the "ideal" position behind the object being followed.
     public float followBias = 0.05f;
 
-	// Use this for initialization
-	void Start () {
-    }
-
-    void FixedUpdate () {
+    void LateUpdate () 
+    {
         // Calculate where the camera should be in the world.
         var idealCameraPosition = (objectToFollow.transform.rotation * positionRelativeToObject) + objectToFollow.transform.position;
 
