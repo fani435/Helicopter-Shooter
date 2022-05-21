@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Wrld;
 
 public class HelicopterController : MonoBehaviour
 {
     public float AscendDescendSpeed;
     public float ForwardBackwardSpeed;
     public float TurnSpeed;
+
+    public WrldMap CurrentMap;
+
+    public Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +20,7 @@ public class HelicopterController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Ascend/Descend
         if(Input.GetKey(KeyCode.Space))
@@ -46,6 +51,14 @@ public class HelicopterController : MonoBehaviour
         {
             RotateRight();
         }
+
+        //Zeroing any velocities incurred by collisions, for stable flight
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        //Adjusting rotation so that helicopter stays level at all times
+        Vector3 AdjustedRotation = new Vector3(0f, transform.localEulerAngles.y, 0f);
+        transform.localEulerAngles = AdjustedRotation;
     }
 
     #region Movement Functions
