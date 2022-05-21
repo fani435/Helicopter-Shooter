@@ -183,6 +183,50 @@ MonoBehaviour:
   m_enableIndoorEntryMarkerEvents: 1
   m_labelCanvas: {fileID: 0}
   m_uploadMeshes: 0
+--- !u!1 &183530140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183530141}
+  - component: {fileID: 183530142}
+  m_Layer: 0
+  m_Name: ShootingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &183530141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183530140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.24, z: 12.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5006512736715214918}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &183530142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183530140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 50, z: 50}
+  m_Center: {x: 0, y: 0, z: 25}
 --- !u!1 &775668469
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,12 +439,58 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581490406}
-  m_LocalRotation: {x: 0.34042445, y: -5.573227e-10, z: 2.0177807e-10, w: 0.94027185}
-  m_LocalPosition: {x: -0.0000038478784, y: 199.99985, z: -60.000046}
+  m_LocalRotation: {x: 0.31417474, y: 0.3620742, z: -0.13108948, w: 0.86776274}
+  m_LocalPosition: {x: -93.89592, y: 170.00015, z: -240.10669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2062327493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062327495}
+  - component: {fileID: 2062327494}
+  m_Layer: 0
+  m_Name: EnemiesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2062327494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062327493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ea7ecaa53e4b743bc7432745f2f1b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  POIURL: https://poi.wrld3d.com/v1.1/search?s=enemy&lat=37.7858&lon=-122.401&apikey=090790327adcdb573747f74bdb5b7b2b
+  EnemyPrefab: {fileID: 8833339744644354932, guid: d06833aad010e584bb8cf56e57762b62,
+    type: 3}
+--- !u!4 &2062327495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062327493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -277.9282, y: 99.06735, z: -164.99934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2128689846
 Animator:
@@ -745,8 +835,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172667824235093}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 150, z: 0}
+  m_LocalRotation: {x: -0.000000011779775, y: 0.38507387, z: -0.0000000037252903,
+    w: 0.92288584}
+  m_LocalPosition: {x: -51.250484, y: 120, z: -197.90065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 725867225400513897}
@@ -756,6 +847,7 @@ Transform:
   - {fileID: 6870754032192087488}
   - {fileID: 7771236846558796231}
   - {fileID: 2166275838006049135}
+  - {fileID: 183530141}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1078,8 +1170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AscendDescendSpeed: 10
-  ForwardBackwardSpeed: 10
-  TurnSpeed: 15
+  ForwardBackwardSpeed: 15
+  TurnSpeed: 20
   CurrentMap: {fileID: 0}
   rb: {fileID: 8296172667824235096}
 --- !u!64 &8296172667824235095
