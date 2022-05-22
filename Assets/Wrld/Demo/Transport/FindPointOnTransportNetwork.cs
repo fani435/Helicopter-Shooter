@@ -7,7 +7,7 @@ using Wrld.Transport;
 
 public class FindPointOnTransportNetwork : MonoBehaviour
 {
-    private readonly LatLongAltitude m_inputCoords = LatLongAltitude.FromDegrees(37.784468, -122.401268, 10.0);
+    private readonly LatLongAltitude m_inputCoords = LatLongAltitude.FromDegrees(37.7850068, -122.400752, 10.0);
     private float m_inputHeadingDegreesA = 225.0f;
     private float m_inputHeadingDegreesB = 300.0f;
     private bool m_isHeadingA;
@@ -70,6 +70,12 @@ public class FindPointOnTransportNetwork : MonoBehaviour
             const double verticalOffset = 1.0;
             outputLLA.SetAltitude(outputLLA.GetAltitude() + verticalOffset);
             var outputPosition = Api.Instance.SpacesApi.GeographicToWorldPoint(outputLLA);
+
+            Debug.Log(m_transportPositioner.InputLatitudeDegrees);
+            Debug.Log(m_transportPositioner.InputLongitudeDegrees);
+            Debug.Log(m_transportPositioner.InputHeadingDegrees);
+            Debug.Log(outputPosition.x + "-" + outputPosition.y + "-" + outputPosition.z);
+            Debug.Log("****");
 
             m_sphereOutput.transform.position = outputPosition;
             m_directionIndicatorOutput.transform.localPosition = outputPosition;

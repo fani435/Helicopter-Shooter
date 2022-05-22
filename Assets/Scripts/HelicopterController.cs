@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Wrld;
+using Wrld.Space;
 
 public class HelicopterController : MonoBehaviour
 {
@@ -9,21 +10,13 @@ public class HelicopterController : MonoBehaviour
     public float ForwardBackwardSpeed;
     public float TurnSpeed;
 
-    public WrldMap CurrentMap;
-
     public Rigidbody rb;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //Ascend/Descend
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             Ascend();
         }

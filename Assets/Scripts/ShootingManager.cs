@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootingManager : MonoBehaviour
 {
     public GameObject Bullet;
+    public AudioSource BulletAudioSource;
     public float BulletSpeed;
     public float TimeBetweenBullets;
 
@@ -40,6 +41,8 @@ public class ShootingManager : MonoBehaviour
 
     public void Shoot(Transform Target)
     {
+        //Playing bullet sound
+        BulletAudioSource.Play();
         //Moving bullet to the barrel of the gun
         Bullet.transform.position = transform.position;
         //Enabing trail renderer of bullet
