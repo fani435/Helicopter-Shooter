@@ -23,6 +23,8 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.transform.CompareTag("Bullet"))
         {
+            //Disabling trail renderer of bullet
+            collision.transform.GetComponent<TrailRenderer>().enabled = false;
             //Hiding the bullet since we have been hit
             collision.transform.gameObject.SetActive(false);
             TakeDamage();

@@ -42,6 +42,8 @@ public class ShootingManager : MonoBehaviour
     {
         //Moving bullet to the barrel of the gun
         Bullet.transform.position = transform.position;
+        //Enabing trail renderer of bullet
+        Bullet.GetComponent<TrailRenderer>().enabled = true;
         //Point bullet to target
         Bullet.transform.LookAt(Target);
         //Show bullet
